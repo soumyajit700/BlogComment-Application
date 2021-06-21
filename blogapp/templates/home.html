@@ -1,0 +1,33 @@
+{% load static %}
+<html>
+<title>BlogApp</title>
+<head>
+    <link rel=" stylesheet" href ="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+<div class="aa">
+<div class="bb">
+    <h4 class="cc">BlogApp</h4>
+      
+        <button type="submit" class="ll" onclick= "location.href='{% url 'blogapp:login' %}'"><span>Login</span></button>
+</div>
+</div>
+{% block blog_entries %}
+{% for object in object_list %}
+<div class="post">
+    <h2 class="dd">{{ object.title }}</h2>
+    <p class="meta">{{ object.created }}</p>
+    {{ object.body }}<br>
+
+
+</div>
+    <div class="hi">
+
+    </div>
+
+{% endfor %}
+{% endblock %}
+</div>
+</body>

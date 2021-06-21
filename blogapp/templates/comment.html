@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Comment</title>
+</head>
+<style>
+  body {font-family: Arial, Helvetica, sans-serif;
+  background-image:url('https://i.pinimg.com/originals/68/5e/18/685e18ff8147427079a14ce27d984688.jpg');
+    background-position: 0px -120px;
+      background-repeat: no-repeat;
+      background-size: cover;
+    margin-bottom: 50px;
+  }
+  
+  input[type=text], select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+  }
+  
+  input[type=submit] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+      background-color: #45a049;
+  }
+  
+  .container {
+      border-radius: 5px;
+      width: 800px;
+      background-color: #f2f2f2;
+      padding: 25px;
+      margin-left: 17%;
+  
+  }
+  </style>
+<body>
+
+  <h4>Update Comment</h4>
+
+<div class="container">
+  <form method="POST"  action=" {% url 'blogapp:edit' ID=ID %} ">
+    {{ form.comment }}
+    {% csrf_token %}     
+         <button type="submit" class="kk">Post</button>
+ </form>
+</div>
+</body>
+</html>

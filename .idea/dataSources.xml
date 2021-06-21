@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="footrulewidth}{2pt}" uuid="9f6c52d7-9ef1-4c30-a7d4-b85e1ff9b947">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:E:/blog\\usepackage{fancyhdr} \usepackage{lastpage}   \pagestyle{fancy} \fancyhf{} \rhead{2017-18} \lhead{Online Transaction security using face Recognition} \lfoot{Dept. of CSE, DSCE, Bangalore 78 } \rfoot{\thepage { of } \pageref{LastPage}}     \renewcommand{\headrulewidth}{2pt} \renewcommand{\footrulewidth}{2pt}</jdbc-url>
+      <driver-properties>
+        <property name="enable_load_extension" value="true" />
+      </driver-properties>
+    </data-source>
+  </component>
+</project>

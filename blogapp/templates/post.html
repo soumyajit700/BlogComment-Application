@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;
+background-image:url('https://i.pinimg.com/originals/68/5e/18/685e18ff8147427079a14ce27d984688.jpg');
+	background-position: 0px -120px;
+    background-repeat: no-repeat;
+    background-size: cover;
+	margin-bottom: 50px;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    width: 800px;
+    background-color: #f2f2f2;
+    padding: 25px;
+    margin-left: 17%;
+
+}
+</style>
+</head>
+<body>
+
+<h4>ADD POST</h4>
+
+<div class="container">
+  <form action="{% url 'blogapp:post' %}" method="post">
+      {% csrf_token %}
+    <label for="fname">Title</label>
+    <input type="text" id="fname" name="title" placeholder="Your blog title..">
+    <label for="subject">Body</label>
+    <textarea id="subject" name="body" placeholder="Write something.." style="height:200px"></textarea>
+
+    <label for="lname">slug</label>
+    <input type="text" id="lname" name="slug" placeholder="slug">
+
+    <label for="country">Publish</label>
+    <input type="checkbox" name="publish" ><br><br>
+
+
+    <input type="submit" value="Post">
+  </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+{% load staticfiles %}
+<html>
+
+
+<head>
+<link rel=" stylesheet" href ="{% static 'style.css' %}">
+
+</head>
+<body>
+{% block comment %}
+{% for object in object_list %}
+    <div class="post">
+        <div class="meta">{{ object.creates }}</div>
+
+        <p>{{ object.comment|linebreaks }}</p>
+    </div>
+
+{% empty %}
+    <p>No comments here yet :(</p>
+{% endfor %}
+{% endblock %}
+</body>
+</html>

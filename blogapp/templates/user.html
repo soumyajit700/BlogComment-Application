@@ -1,0 +1,42 @@
+{% load static %}
+<html>
+<title>BlogApp</title>
+<head>
+    <link rel=" stylesheet" href ="{% static 'style.css' %}">
+
+</head>
+<body>
+<div class="aa">
+<div class="bb">
+    <h4 class="cc">BlogApp</h4>
+       <button type="submit" class="ll"  onclick= "location.href='{% url 'blogapp:index' %}'"><span>Back</span></button>
+
+
+        <button type="submit" class="kk"  onclick= "location.href='{% url 'blogapp:add' %}'"><span>Add Post</span></button>
+
+</div>
+{% block blog_entries %}
+{% for object in object_list %}
+<div class="post1">
+    <h2 class="dd">{{ object.title }}</h2>
+    <p class="meta">{{ object.created }}</p>
+    <p class="mn">{{ object.body }}</p>
+
+</div>
+<div class="comment">
+{% if  not object.comments.all %}
+<a>No Comments Yet <button type="get" class="sk" onclick= "location.href='{% url 'blogapp:comment' slug=object.slug %}'">Add</button></a>
+{% else %}
+    {% for comments in object.comments.all %}
+
+       <br> <strong>{{ comments.name }} || {{comments.creates}}</strong>
+        <p>{{comments.comment}}<button type="get" class="ks" onclick= "location.href='{% url 'blogapp:edit' ID=comments.ID %}'">Edit</button><button type="submit" class= "kl" onclick= "location.href='{% url 'blogapp:delete' ID=comments.ID %}'"><span>Delete</span></button></p>
+    
+    {% endfor %}
+{% endif %}
+</div>
+{% endfor %}
+{% endblock %}
+</div>
+</body>
+</html>
